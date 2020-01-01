@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''cp -f ./index.html /usr/local/apache2/htdocs/
+        sh '''cp -f ./index.html /usr/local/apache2/htdocs/index2.html
 echo it is done'''
       }
     }
