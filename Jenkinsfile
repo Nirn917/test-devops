@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''chmod 777 /usr/local/apache2/htdocs
+        sh '''whoami
 ls'''
       }
     }
