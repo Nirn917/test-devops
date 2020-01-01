@@ -9,7 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'ls -l /usr/local/apache2/'
+        sh '''su root
+ls -l /usr/local/apache2/'''
       }
     }
 
