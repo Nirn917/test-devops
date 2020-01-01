@@ -9,10 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''cd ..
-ls -l
-ls -l /usr/local/apache2/
-whoami'''
+        sh '''cp ./index.html /usr/local/apache2/htdocs/
+'''
       }
     }
 
