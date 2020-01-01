@@ -9,10 +9,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''cd /usr/local/apache2/htdocs/
-ls
-curl http://127.0.0.1/index.html
-echo it is done'''
+        sh 'ls'
+      }
+    }
+
+    stage('test') {
+      steps {
+        sh 'cat /usr/local/apache2/htdocs/index.html'
       }
     }
 
