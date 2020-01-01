@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'httpd:2.4.41'
-      args '-p 3000:80'
+      args '-u root:root -p 3000:80'
     }
 
   }
