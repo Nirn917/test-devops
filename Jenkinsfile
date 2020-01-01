@@ -9,7 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'ls'
+        sh '''chmod 777 /usr/local/apache2/htdocs
+ls'''
       }
     }
 
