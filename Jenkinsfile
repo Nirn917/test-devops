@@ -9,8 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''whoami
-ls'''
+        sh 'ls -l /usr/local/apache2/'
       }
     }
 
