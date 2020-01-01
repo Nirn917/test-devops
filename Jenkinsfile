@@ -1,0 +1,18 @@
+pipeline {
+  agent {
+    docker {
+      args '-p 3000:3000'
+      image 'httpd:2.4.41'
+    }
+
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh '''cp ./index.html /usr/local/apache2/htdocs/
+echo it is done'''
+      }
+    }
+
+  }
+}
