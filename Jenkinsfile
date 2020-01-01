@@ -9,7 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''ls
+        sh '''cd /usr/local/apache2/htdocs/
+ls
 echo it is done'''
       }
     }
