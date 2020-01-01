@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''sudo cp ./index.html /usr/local/apache2/htdocs/
+        sh '''cp -f ./index.html /usr/local/apache2/htdocs/
 echo it is done'''
       }
     }
