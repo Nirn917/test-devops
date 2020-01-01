@@ -11,7 +11,8 @@ pipeline {
       steps {
         sh '''cd ..
 ls -l
-ls -l /usr/local/apache2/'''
+ls -l /usr/local/apache2/
+whoami'''
       }
     }
 
