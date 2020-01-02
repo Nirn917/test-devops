@@ -14,6 +14,7 @@ apt install -y apache2 nodejs npm curl
 /etc/init.d/apache2 start
 cp ./index.html /var/www/html/
 npm i html-validator-cli -g
+ln -s /usr/bin/nodejs /usr/bin/node
 html-validator --file=./index.html
 
 '''
