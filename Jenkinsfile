@@ -18,10 +18,12 @@ cp ./index.html /var/www/html/
       }
     }
 
-    stage('test') {
-      agent any
+    stage('Test') {
       steps {
-        sh 'cat /var/www/html/index.html'
+        sh '''pwd
+cd /var/www/html
+pwd
+cat index.html'''
       }
     }
 
