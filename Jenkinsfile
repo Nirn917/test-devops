@@ -18,7 +18,7 @@ cp ./index.html /var/www/html/
       }
     }
 
-    stage('Test') {
+    stage('Pre-check') {
       steps {
         sh '''pwd
 cd /var/www/html
@@ -27,6 +27,12 @@ cat index.html
 netstat -taupen
 ip a
 '''
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'curl 127.0.0.1'
       }
     }
 
