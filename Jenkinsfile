@@ -1,15 +1,19 @@
 pipeline {
   agent {
     docker {
-      image 'httpd:2.4.41'
       args '-u root:root -p 3000:80'
+      image 'ubuntu:xenial'
     }
 
   }
   stages {
     stage('Build') {
       steps {
-        sh '''cp ./index.html /usr/local/apache2/htdocs/
+        sh '''apt update
+apt install apache2 nodejs npm
+systemctl start apache2
+cp ./index.html /var/www/html/
+
 '''
       }
     }
@@ -23,9 +27,7 @@ pipeline {
 
       }
       steps {
-        sh '''npm i html-validator-cli -g
-html-validator --file=./index.html
-'''
+        sh 'cat /var/www/html/index.html'
       }
     }
 
