@@ -19,13 +19,7 @@ cp ./index.html /var/www/html/
     }
 
     stage('test') {
-      agent {
-        docker {
-          image 'node:latest'
-          args '-p 3200:3000 -u root:root'
-        }
-
-      }
+      agent any
       steps {
         sh 'cat /var/www/html/index.html'
       }
