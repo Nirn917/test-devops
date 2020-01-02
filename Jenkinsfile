@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''apt update
-apt install apache2 nodejs npm
+apt install -y apache2 nodejs npm
 systemctl start apache2
 cp ./index.html /var/www/html/
 
