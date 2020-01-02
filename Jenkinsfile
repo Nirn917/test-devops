@@ -15,8 +15,17 @@ pipeline {
     }
 
     stage('test') {
+      agent {
+        docker {
+          image 'node:latest'
+          args '-p 3200:3000 -u root:root'
+        }
+
+      }
       steps {
-        sh 'cat /usr/local/apache2/htdocs/index.html'
+        sh '''npm i html-validator-cli -g
+html-validator --file=./index.html
+'''
       }
     }
 
