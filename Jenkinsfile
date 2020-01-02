@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh '''apt update
 apt install -y apache2 nodejs npm
-systemctl start apache2
+/etc/init.d/apache2 start
 cp ./index.html /var/www/html/
 
 '''
