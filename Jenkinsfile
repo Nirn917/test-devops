@@ -10,12 +10,9 @@ pipeline {
     stage('Build') {
       steps {
         sh '''apt update
-apt install -y apache2 nodejs npm curl
+apt install -y apache2 curl net-tools
 /etc/init.d/apache2 start
 cp ./index.html /var/www/html/
-npm i html-validator-cli -g
-ln -s /usr/bin/nodejs /usr/bin/node
-html-validator --file=./index.html
 
 '''
       }
@@ -26,7 +23,10 @@ html-validator --file=./index.html
         sh '''pwd
 cd /var/www/html
 pwd
-cat index.html'''
+cat index.html
+netstat -taupen
+ip a
+'''
       }
     }
 
