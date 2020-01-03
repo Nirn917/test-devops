@@ -20,10 +20,7 @@ cp ./index.html /var/www/html/
 
     stage('Pre-check') {
       steps {
-        sh '''pwd
-cd /var/www/html
-pwd
-cat index.html
+        sh '''cat /var/www/html/index.html
 netstat -taupen
 ip a
 '''
